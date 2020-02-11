@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "Phoenix"
+  "defaultProject": "Phoenix",
+  "cli": {
+    "analytics": "98f99ea8-6529-4704-b507-83fe28453a14"
+  }
 }

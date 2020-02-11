@@ -1,20 +1,34 @@
-<p>sidenav-list works!</p>
 <mat-nav-list>
     <a mat-list-item routerLink="/home" (click)="onSidenavClose()">
         <mat-icon>home</mat-icon> <span class="nav-caption">Home</span>
     </a>
-    <a mat-list-item routerLink="/owner" (click)="onSidenavClose()">
-        <mat-icon>assignment_ind</mat-icon> <span class="nav-caption">Owner Actions</span>   
-    </a>
-    <a mat-list-item routerLink="#" (click)="onSidenavClose()">
-        <mat-icon>account_balance</mat-icon><span class="nav-caption">Account Actions</span>
-    </a>
-<mat-list-item [matMenuTriggerFor]="menu">
-    <mat-icon>unfold_more</mat-icon>
-    <a matline>Example</a>
-</mat-list-item>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item (click)="onSidenavClose()">View profile</button>
-  <button mat-menu-item (click)="onSidenavClose()">Add contact</button>
-</mat-menu>
-  </mat-nav-list>
+    <mat-list-item [matMenuTriggerFor]="catalogues">
+        <mat-icon>book</mat-icon>
+        <button mat-menu-item>Catalogos</button>
+    </mat-list-item>
+    <mat-menu #catalogues="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="entriesdepartures">Entradas y Salidas</button>
+        <button mat-menu-item [matMenuTriggerFor]="cat_inventory">Inventario</button>
+        <button mat-menu-item [matMenuTriggerFor]="process_management">Gestión de Proceso</button>
+    </mat-menu>
+    <mat-menu #entriesdepartures="matMenu">
+        <button mat-menu-item>Linea de Transporte</button>
+        <button mat-menu-item>Tipo de Transporte</button>
+    </mat-menu>
+    <mat-menu #cat_inventory="matMenu">
+        <button routerLink="/catalogues/fridgebrand" mat-menu-item>Marca de Cabinet</button>
+        <button mat-menu-item>Modelo de Cabinet</button>
+        <button mat-menu-item>Tipo de Equipo</button>
+    </mat-menu>
+    <mat-menu #process_management="matMenu">
+        <button mat-menu-item>Condición</button>
+        <button mat-menu-item>Estatus Unilever</button>
+    </mat-menu>
+    <mat-list-item [matMenuTriggerFor]="inventory">
+        <mat-icon>work</mat-icon>
+        <button mat-menu-item>Inventario</button>
+    </mat-list-item>
+    <mat-menu #inventory="matMenu">
+        <button mat-menu-item>Gestión Cabinet</button>
+    </mat-menu>
+</mat-nav-list>

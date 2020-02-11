@@ -5,6 +5,7 @@ import { HomeComponent } from '../home/home.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
+  { path: 'catalogues', loadChildren: 'src/app/catalogues/catalogues.module'},
   { path: '', redirectTo: '/home', pathMatch: 'full' }
  
 ];
