@@ -5,7 +5,10 @@ import { HomeComponent } from '../home/home.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
-  { path: 'catalogues', loadChildren: 'src/app/catalogues/catalogues.module'},
+  { path: 'catalogues',
+   loadChildren: () => import('src/app/catalogues/catalogues.module').then(m =>
+    m.CataloguesModule)
+  },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
  
 ];
